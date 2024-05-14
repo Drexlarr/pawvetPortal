@@ -1,0 +1,36 @@
+.img_perfil {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+
+}
+
+.perfil-container {
+    display: flex;
+    align-items: center;
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+    width: 150px;
+    margin: 0 2% 0 1%;
+    height: 100%;
+}
+
+.name_type {
+    display: flex;
+
+}
+
+.subTitle {
+    font-size: 0.7em;
+    color: #90c3a4;
+    text-overflow: ellipsis;
+    font-weight: bold;
+}
+
+.list {
+    margin: 0 1% 1% 1%;
+}
