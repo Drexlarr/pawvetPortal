@@ -14,15 +14,19 @@
 .info {
     display: flex;
     flex-direction: column;
-    width: 150px;
-    margin: 0 2% 0 1%;
+    margin: 2% 2% 0 1%;
     height: 100%;
-}
-
-.name_type {
-    display: flex;
+    text-overflow: ellipsis;
 
 }
+
+.info h6 {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+
 
 .subTitle {
     font-size: 0.7em;
@@ -32,5 +36,7 @@
 }
 
 .list {
+    height: 225px;
     margin: 0 1% 1% 1%;
+    overflow-y: auto;
 }

@@ -1,73 +1,70 @@
-<h2 style="margin-left: 1%">Tus citas</h2>
-<ul class="nav nav-tabs" role="tablist">
-  <li class="nav-item" role="presentation">
-    <a
-      class="nav-link"
-      data-bs-toggle="tab"
-      role="tab"
-      aria-selected="true"
-      [class.active]="selectedTab === 0"
-      (click)="selectTab(0)"
-      >Próximo</a
-    >
-  </li>
-  <li class="nav-item" role="presentation">
-    <a
-      class="nav-link"
-      data-bs-toggle="tab"
-      role="tab"
-      [class.active]="selectedTab === 1"
-      (click)="selectTab(1)"
-      aria-selected="false"
-      >Pasado</a
-    >
-  </li>
-</ul>
-<div class="tab-content pt-5" id="tab-content">
-  <div class="tab-pane" [class.active]="selectedTab === 0" role="tabpanel">
-    <div class="list">
+<div style="padding: 5rem 10rem 5rem 10rem">
+  <ul class="nav nav-tabs" role="tablist">
+    <li class="nav-item" role="presentation">
+      <a
+        class="nav-link"
+        data-bs-toggle="tab"
+        role="tab"
+        aria-selected="true"
+        [class.active]="selectedTab === 0"
+        (click)="selectTab(0)"
+        >Próximo</a
+      >
+    </li>
+    <li class="nav-item" role="presentation">
+      <a
+        class="nav-link"
+        data-bs-toggle="tab"
+        role="tab"
+        [class.active]="selectedTab === 1"
+        (click)="selectTab(1)"
+        aria-selected="false"
+        >Pasado</a
+      >
+    </li>
+  </ul>
+  <div class="tab-content pt-5" id="tab-content" style="width: 52">
+    <div class="tab-pane" [class.active]="selectedTab === 0" role="tabpanel">
       <h5>Hoy</h5>
-      <div *ngFor="let usuario of usuariosHoy" class="perfil-container">
-        <img class="img_perfil" src="{{ usuario.img }}" alt="Avatar" />
-        <div class="info">
-          <div class="name_type">
+      <div class="list">
+        <div *ngFor="let usuario of usuariosHoy" class="perfil-container">
+          <img class="img_perfil" src="{{ usuario.img }}" alt="Avatar" />
+          <div class="info">
             <h6>{{ usuario.nombre }}</h6>
             <p class="subTitle">{{ usuario.tipoConsulta }}</p>
           </div>
-        </div>
-        <div class="time">
-          <p class="subTitle">{{ usuario.hora }}</p>
+          <div class="time">
+            <p class="subTitle">{{ usuario.hora }}</p>
+          </div>
         </div>
       </div>
-    </div>
-    <div class="list">
       <h5>Próximos</h5>
-      <div *ngFor="let usuario of usuariosFuturos" class="perfil-container">
-        <img class="img_perfil" src="{{ usuario.img }}" alt="Avatar" />
-        <div class="info">
-          <div class="name-type">
-            <h6>{{ usuario.nombre }}</h6>
+      <div class="list">
+        <div *ngFor="let usuario of usuariosFuturos" class="perfil-container">
+          <img class="img_perfil" src="{{ usuario.img }}" alt="Avatar" />
+          <div class="info">
+            <h6 class>{{ usuario.nombre }}</h6>
             <p class="subTitle">{{ usuario.tipoConsulta }}</p>
           </div>
-        </div>
-        <div class="time">
-          <p class="subTitle">{{ usuario.fecha }} &nbsp;{{ usuario.hora }}</p>
+          <div class="time">
+            <p class="subTitle">{{ usuario.fecha }} &nbsp;{{ usuario.hora }}</p>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-  <div class="tab-pane" [class.active]="selectedTab === 1" role="tabpanel">
-    <h5>Pasados</h5>
-    <div *ngFor="let usuario of usuariosPasados" class="perfil-container">
-      <img class="img_perfil" src="{{ usuario.img }}" alt="Avatar" />
-      <div class="info">
-        <div class="name-type">
-          <h6>{{ usuario.nombre }}</h6>
-          <p class="subTitle">{{ usuario.tipoConsulta }}</p>
+    <div class="tab-pane" [class.active]="selectedTab === 1" role="tabpanel">
+      <h5>Pasados</h5>
+      <div class="list">
+        <div *ngFor="let usuario of usuariosPasados" class="perfil-container">
+          <img class="img_perfil" src="{{ usuario.img }}" alt="Avatar" />
+          <div class="info">
+            <h6>{{ usuario.nombre }}</h6>
+            <p class="subTitle">{{ usuario.tipoConsulta }}</p>
+          </div>
+          <div class="time">
+            <p class="subTitle">{{ usuario.fecha }} - {{ usuario.hora }}</p>
+          </div>
         </div>
-      </div>
-      <div class="time">
-        <p class="subTitle">{{ usuario.fecha }} - {{ usuario.hora }}</p>
       </div>
     </div>
   </div>
